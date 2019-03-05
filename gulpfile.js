@@ -7,14 +7,23 @@ let cleancss = require('gulp-clean-css');
 let path = require('path');
 let htmlmin = require('gulp-htmlmin');
 let imgmin = require('gulp-imagemin');
+var browserSync = require('browser-sync').create();
+let reload = browserSync.reload;
 
-gulp.task('default',['ugjs','ugimg','ughtml'],()=>{
+
+gulp.task('default',()=>{
     gulp.watch('assets/styles/*.less',['ugless']);
+    gulp.watch("*.html").on('change', reload);
+    browserSync.init({
+        server: {
+            baseDir: "./"
+        }
+    });
 });
 
 gulp.task('ugjs',()=>{
     return pipeline(
-        gulp.src('assets/js/*.js'),
+        gulp.src('src/*.js'),
         uglify(),
         rename((path)=>{
             path.extname='.min.js'
@@ -31,7 +40,8 @@ gulp.task('ugless',()=>{
         rename((path)=>{
             path.extname='.min.css'
         }),
-        gulp.dest('dist/css')
+        gulp.dest('dist/css'),
+        reload({stream: true})
     )
 });
 
