@@ -10,6 +10,7 @@ function ruterchange() {
         case '#shouye':$('#root').load('../modules/shouye/shouye.html');break;
         case '#woyaotouzi':$('#root').load('../modules/woyaotouzi/woyaotouzi.html');break;
         case '#woyaojiekuan':$('#root').load('../modules/woyaojiekuan/woyaojiekuan.html');break;
+        case '#gerenzhongxin':$('#root').load('../modules/gerenzhongxin/gerenzhongxin.html');break;
         default:$('#root').load('../modules/shouye/shouye.html');break;
     }
     //清除所有
@@ -28,7 +29,9 @@ function getsession() {
         crossDomain: true,  //是否跨域
         success: function(res){
             if(res !== 'nologin')
-                $('#username').html(res);
+                $('#username').html(res).attr('href','/');
+
+
             else
                 $('#username').html('请登录');
         }
