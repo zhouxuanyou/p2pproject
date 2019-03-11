@@ -13,6 +13,7 @@ function ruterchange() {
         case '#woyaojiekuan':$('#root').load('../modules/woyaojiekuan/woyaojiekuan.html');break;
         case '#gerenzhongxin':$('#root').load('../modules/gerenzhongxin/gerenzhongxin.html');break;
         case '#xiugaiuserinfo':$('#root').load('../modules/xiugaiuserinfo/xiugaiuserinfo.html');break;
+        case '#jiekuanxiangqing':$('#root').load('../modules/jiekuanxiangqing/jiekuanxiangqing.html');break;
         default:$('#root').load('../modules/shouye/shouye.html');break;
     }
     //清除所有
