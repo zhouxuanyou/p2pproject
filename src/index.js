@@ -14,6 +14,7 @@ function ruterchange() {
         case '#gerenzhongxin':$('#root').load('../modules/gerenzhongxin/gerenzhongxin.html');break;
         case '#xiugaiuserinfo':$('#root').load('../modules/xiugaiuserinfo/xiugaiuserinfo.html');break;
         case '#jiekuanxiangqing':$('#root').load('../modules/jiekuanxiangqing/jiekuanxiangqing.html');break;
+        case '#borrowinfo':  $('#root').load('../modules/borrowinfo/borrowinfo.html'); break;
         default:$('#root').load('../modules/shouye/shouye.html');break;
     }
     //清除所有
